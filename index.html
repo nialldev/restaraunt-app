@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet"> 
+            <link rel="stylesheet" href="index.css">
+        </head>
+        <body>
+
+                <div class="main-container">
+
+                    <header>
+                        <div class="title">
+                            <h1>Jimmy's Diner</h1>
+                            <p class="tagline">The best burgers and pizzas in town.</p>
+                        </div>
+                    </header>
+                    
+                    <main>
+                            <div id="feed"></div>
+                            <div id="cart"></div> 
+                            <div id="completeOrderContainer"></div> 
+                            
+                            <div class="modal-background" id="modal-bg"></div>
+                            <div id="modal" class="modal">
+                                <h3 class="form-title">Enter card details</h3>
+                                <form class="form">
+                                    <input type="text" placeholder="Enter your name" class="form-input">
+                                    <input type="text" placeholder="Enter card number" class="form-input">
+                                    <input type="text" placeholder="Enter CVV" class="form-input">
+                                    <button id="payBtn">Pay</button>
+                                </form>
+                            </div>
+                            <div id="thankYouContainer"></div> 
+                             
+                    </main>
+                    
+                    <footer></footer>
+
+            </div>
+            
+        <script src="index.js" type="module"></script>
+        </body>
+    </html>
+
