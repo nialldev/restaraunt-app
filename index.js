@@ -4,6 +4,8 @@ let pizzaHtml = ``
 let burgerHtml = ``
 let beerHtml = ``
 
+const cart = document.getElementById('cart')
+
 let removeBool = false
 
 const pizzaObj = menuArray.filter(function(element){
@@ -201,29 +203,11 @@ function getCartHtml() {
 
 }
 
-function getCompleteOrderHtml() {
-    const completeHtml = `<div class="buy-container" id="completeOrderBtn">
-            <button id="purchase-btn">Complete order</button>
-        </div>`
-        return completeHtml
-}
-
-function thankYou() {
-
-    let thankYouHtml = `
-        <div class="thank-you" id="thankYouContent">
-            <h2>Thanks, James! Your order is on its way!</h2>
-        </div>`
-    return thankYouHtml
-    
-
-}
 
 function render(){
 
     document.getElementById('feed').innerHTML = getFeedHtml()
-    document.getElementById('cart').innerHTML = getCartHtml()
-    document.getElementById('completeOrderContainer').innerHTML = getCompleteOrderHtml()
+    cart.innerHTML = getCartHtml()
 
 }
 
@@ -233,8 +217,7 @@ const buyBtn = document.getElementById('purchase-btn')
 const modalBg = document.getElementById('modal-bg')
 const modal = document.getElementById('modal')
 const payBtn = document.getElementById('payBtn')
-// const thankYouContainer = document.getElementById('thankYouContainer')
-// const thankYouContent = document.getElementById('thankYouContent')
+const thankYouContent = document.getElementById('thankYouContent')
 
 buyBtn.addEventListener("click", function(e){
     modalBg.classList.add("display")
@@ -252,9 +235,16 @@ modalBg.addEventListener("click", function(e){
 
 payBtn.addEventListener("click", function(e){
     e.preventDefault()
+
+    const completeOrder = document.getElementById('completeOrderContainer')
+
     modalBg.classList.remove("display")
     modal.classList.remove("display")
-    // thankYouContainer.innerHtml = thankYou()    
+
+    cart.style.display = 'none'
+    completeOrder.style.display = 'none'
+    thankYouContent.style.display = 'block'
+    
     e.stopPropagation()
 
 })
