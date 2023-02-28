@@ -222,7 +222,6 @@ const thankYouContent = document.getElementById('thankYouContent')
 buyBtn.addEventListener("click", function(e){
     modalBg.classList.add("display")
     modal.classList.add("display")
-    console.log("click")
     e.stopPropagation()
 })
 
